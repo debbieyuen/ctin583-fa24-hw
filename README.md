@@ -5,7 +5,7 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 ## Homeworks
 | Homework  | Description | Language | Link
 | --------- | ------------- | ---- | ---- |
-| [HW 02](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | Folder |
+| [HW 02](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | [Folder](./hw02) |
 | HW 04 | Generics and Inheritance | C# | Not Released |
 | HW 05 | Object-Oriented Concepts | C# | Not Released |
 | HW 06 | Euler Angles, Matrix, Quaternions | C# | Not Released|
