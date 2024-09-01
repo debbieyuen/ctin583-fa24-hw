@@ -1,5 +1,7 @@
 # CTIN 583 (Fall 2024) Programming Homework Assignments
 
+Please refer to this GitHub repository for some of your homework. Feel free to book mark or star this repository to make things easier! 
+
 ## Homeworks
 | Homework  | Description | Language | Link
 | --------- | ------------- | ---- | ---- |
@@ -24,7 +26,7 @@ Clone **your** new repository via Terminal or GitHub Desktop. Instead of my repo
 ```bash
 $ git clone https://github.com/debbieyuen/ctin583-fa24-hw
 ```
-Remember to git pull before each homework assignment!
+Remember to fetch for the new assignments before starting each homework assignment!
 ```bash
 $ git status
 $ git pull origin main
