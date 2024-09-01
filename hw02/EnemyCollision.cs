@@ -42,6 +42,15 @@ public class EnemyCollision : MonoBehaviour
         }
     }
 
-    // TODO: Problem 10: Define a public class named Weapon. In the class, define 3 int variables for arrow, sword, and rocket.
-    // Then write a for loop that loops between the arrow, sword, and rocket. 
+    /* TODO: Problem 10: In our game, we want our enemy to alternate weapons every couple of frames.
+    However, also would like our enemy to lose access to their weapons when they are frozen/disabled.
+    First, let's define a public class named Weapon. In the class, define 3 int variables for arrow, sword, and rocket.
+    
+
+    Outside of our Weapon class, we would want to define an IEnumerator function. 
+    Then in our class, write a for loop that loops between the arrow, sword, and rocket. 
+    Use the WaitForSeconds function to tell it to switch weapons every 5 seconds. 
+
+    Remember to call your Coroutine.
+    */ 
 }
