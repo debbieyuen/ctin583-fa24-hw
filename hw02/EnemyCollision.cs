@@ -7,7 +7,8 @@ public class EnemyCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Problem 10
+        StartCoroutine(SwitchWeapons());
     }
 
     // Update is called once per frame
@@ -18,10 +19,16 @@ public class EnemyCollision : MonoBehaviour
     
     // TODO: Problem 7: Why did I not include the words public or private here?
     // What does it mean when I only write void (Movement)? What does void mean?
+
+    // Excluding public or private means that the function defaults to private. void (Movement) means that the function is private, and void means that the function
+    // does not return a value.
     void Movement ()
     {
         // TODO: Problem 8: Please explain what the next 4 lines mean.
         // What is Input.GetAxis, transform.Translate, and transform.Rotate? 
+
+        // Input.GetAxis returns a value of -1, 0, or 1, which determines the direction of the player's movement based on the input, or if there is no input.
+        // transform.Translate moves the player's position based on the input, and transform.Rotate turns the player in the game world based on the input.
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
         
@@ -34,6 +41,9 @@ public class EnemyCollision : MonoBehaviour
     {
         // TODO: Problem 9: Looking at this code, is this code using Unity's Old or New 
         // Input System? Please describe what Instantiate is doing in this if statement.
+
+        // Since the new input system imports the UnityEngine.InputSystem namespace, this code is using Unity's old input system. Instantiate 
+        // creates a new instance of the bullet prefab at the fire position and adds a force to the bullet instance in the forward direction.
         if(Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
             Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
@@ -45,7 +55,6 @@ public class EnemyCollision : MonoBehaviour
     /* TODO: Problem 10: In our game, we want our enemy to alternate weapons every couple of frames.
     However, also would like our enemy to lose access to their weapons when they are frozen/disabled.
     First, let's define a public class named Weapon. In the class, define 3 int variables for arrow, sword, and rocket.
-    
 
     Outside of our Weapon class, we would want to define an IEnumerator function. 
     Then in our class, write a for loop that loops between the arrow, sword, and rocket. 
@@ -53,4 +62,21 @@ public class EnemyCollision : MonoBehaviour
 
     Remember to call your Coroutine.
     */ 
+
+    public class Weapon
+    {
+        public int arrow;
+        public int sword;
+        public int rocket;
+    }
+
+    IEnumerator SwitchWeapons()
+    {
+        
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(5);
+        }
+    }
+    
 }
