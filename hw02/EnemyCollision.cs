@@ -18,6 +18,7 @@ public class EnemyCollision : MonoBehaviour
     
     // TODO: Problem 7: Why did I not include the words public or private here?
     // What does it mean when I only write void (Movement)? What does void mean?
+
     void Movement ()
     {
         // TODO: Problem 8: Please explain what the next 4 lines mean.
