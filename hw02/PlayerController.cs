@@ -2,7 +2,7 @@
 // What is "using" and what is System.Collections? Please provide comments on what the next three lines mean. 
 
 //ANSWER: "using" directives allow for the use of a collection of classes 
-using System.Collections;// ANSWER: Contains interfacess and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables, and dictionaries
+using System.Collections;// ANSWER: Contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables, and dictionaries
 using System.Collections.Generic;
 using UnityEngine;
 
