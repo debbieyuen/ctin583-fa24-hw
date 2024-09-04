@@ -7,7 +7,7 @@ public class EnemyCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Problem 10
+        // Problem 10 - Call the Coroutine here
         StartCoroutine(SwitchWeapons());
     }
 
@@ -56,8 +56,8 @@ public class EnemyCollision : MonoBehaviour
     However, also would like our enemy to lose access to their weapons when they are frozen/disabled.
     First, let's define a public class named Weapon. In the class, define 3 int variables for arrow, sword, and rocket.
 
-    Outside of our Weapon class, we would want to define an IEnumerator function. 
-    Then in our class, write a for loop that loops between the arrow, sword, and rocket. 
+    Outside of our Weapon class, we would want to define an IEnumera for loop that loops between the arrowator function. 
+    Then in our class, write , sword, and rocket. 
     Use the WaitForSeconds function to tell it to switch weapons every 5 seconds. 
 
     Remember to call your Coroutine.
@@ -65,17 +65,37 @@ public class EnemyCollision : MonoBehaviour
 
     public class Weapon
     {
-        public int arrow;
-        public int sword;
-        public int rocket;
+        public int arrow = 1;
+        public int sword = 0;
+        public int rocket = 0;
+
     }
 
     IEnumerator SwitchWeapons()
     {
         
         for (int i = 0; i < 3; i++)
-        {
-            yield return new WaitForSeconds(5);
+        {  
+            WaitForSeconds(5);
+
+            if (i==1)
+            {
+                Weapon.arrow = 1;
+                Weapon.sword = 0;
+                Weapon.rocket = 0;
+            }
+            else if (i==2)
+            {
+                Weapon.arrow = 0;
+                Weapon.sword = 1;
+                Weapon.rocket = 0;
+            }
+            else
+            {
+                Weapon.arrow = 0;
+                Weapon.sword = 0;
+                Weapon.rocket = 1;
+            }
         }
     }
     
