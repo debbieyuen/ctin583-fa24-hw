@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Start is called before the first frame update\
+    //blah blah
     void Start()
     {
         
