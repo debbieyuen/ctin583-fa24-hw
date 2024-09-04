@@ -18,15 +18,23 @@ public class EnemyCollision : MonoBehaviour
     
     // TODO: Problem 7: Why did I not include the words public or private here?
     // What does it mean when I only write void (Movement)? What does void mean?
+    
+    //public means you can access it globally,while private you can not. if no modifier is provided, it defalts to private
+    //void is a return type, it means the function doesn't return a value.
     void Movement ()
     {
         // TODO: Problem 8: Please explain what the next 4 lines mean.
         // What is Input.GetAxis, transform.Translate, and transform.Rotate? 
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        //detects forward and backward movement
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        
+        //detects turning movement
         transform.Translate(Vector3.forward * forwardMovement);
+        //move the player forward/backward depending on input and speed
         transform.Rotate(Vector3.up * turnMovement);
+        //rotates the player along the y axis, which is to rotate left or right based on input and speed.
+        
+       
     }
     
     
@@ -41,6 +49,7 @@ public class EnemyCollision : MonoBehaviour
             myStuff.bullets--;
         }
     }
+    // this is the old system. The instantiate function is generating a bullet at the fireposition and shooting it forwards at a given speed
 
     /* TODO: Problem 10: In our game, we want our enemy to alternate weapons every couple of frames.
     However, also would like our enemy to lose access to their weapons when they are frozen/disabled.
@@ -50,7 +59,26 @@ public class EnemyCollision : MonoBehaviour
     Outside of our Weapon class, we would want to define an IEnumerator function. 
     Then in our class, write a for loop that loops between the arrow, sword, and rocket. 
     Use the WaitForSeconds function to tell it to switch weapons every 5 seconds. 
-
+    
     Remember to call your Coroutine.
-    */ 
+    */
+
+    public class Weapon
+    {
+        private int arrow = 1;
+        private int sword = 2;
+        private int rocket = 3 ;
+        
+        
+        for (int i = 1; i < 4; i++)
+        {
+            StartCoroutine(SwitchWeapons());
+        }
+    }
+
+    IEnumerator SwitchWeapons()
+    {
+        yield return new WaitForSeconds(5f);
+        
+    }
 }
