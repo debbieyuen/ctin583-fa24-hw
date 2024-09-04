@@ -63,6 +63,7 @@ public class EnemyCollision : MonoBehaviour
     Remember to call your Coroutine.
     */
 
+    public bool frozen = false;
     public class Weapon
     {
         private int arrow = 1;
@@ -70,15 +71,17 @@ public class EnemyCollision : MonoBehaviour
         private int rocket = 3 ;
         
         
-        for (int i = 1; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
+            //you do something here to actually switch the weapons but I don't know how
             StartCoroutine(SwitchWeapons());
         }
     }
 
     IEnumerator SwitchWeapons()
     {
-        yield return new WaitForSeconds(5f);
-        
-    }
+        if(!frozen) 
+        {
+            yield return new WaitForSeconds(5f);
+        }
 }
