@@ -1,6 +1,7 @@
 // TODO: Problem 1: Write in the comments what each line of code is doing.
 // What is "using" and what is System.Collections? Please provide comments on what the next three lines mean. 
 using System.Collections;
+//directive for a particular namespace which are being used in that script
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
     */
     
     // Start is called before the first frame update
+    // Declaring a variable
+    string username;
+    // Assigning a value to a variable
+    username = Console.ReadLine();
+    // Retrieving its current value
+    Console.WriteLine("My player's name is " + Arikaka);
     void Start()
     {
         // TODO: Problem 3: Describe when you would put code in the Start() function instead of the Update() function. 
