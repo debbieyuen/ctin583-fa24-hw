@@ -1,8 +1,8 @@
-// TODO: Problem 1: Write in the comments what each line of code is doing.
-// What is "using" and what is System.Collections? Please provide comments on what the next three lines mean. 
-using System.Collections;   // "Using" means that we're importing the System.Collections namespace to use in this script. System.Collections contains IEnumerator, which is necessary for couroutines in Unity.
-using System.Collections.Generic; // This is importing the System.Collections.Generic namespace. This namespace allows users to create strongly typed collections. Strongly typed languages predefine types of data- this helps with type safety and runtime performance, but limits flexibility.
-using UnityEngine;  // This line is importing the UnityEngine namespace, which contains classes that are specific to Unity, including the base class for all scripts in unity- MonoBehaviour.
+ // TODO: Problem 1: Write in the comments what each line of code is doing.
+ // What is "using" and what is System.Collections? Please provide comments on what the next three lines mean. 
+using System.Collections;    // "Using" means that we're importing the System.Collections namespace to use in this script. System.Collections contains IEnumerator, which is necessary for couroutines in Unity.
+using System.Collections.Generic;  // This is importing the System.Collections.Generic namespace. This namespace allows users to create strongly typed collections. Strongly typed languages predefine types of data- this helps with type safety and runtime performance, but limits flexibility.
+using UnityEngine;   // This line is importing the UnityEngine namespace, which contains classes that are specific to Unity, including the base class for all scripts in unity- MonoBehaviour. 
 
 
 
