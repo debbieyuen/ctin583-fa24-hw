@@ -15,21 +15,31 @@ public class EnemyCollision : MonoBehaviour
     {
         
     }
-    
+
     // TODO: Problem 7: Why did I not include the words public or private here?
+    //public can be accessed from any class within a namespace, while private can only be accessed within the scope where it is defined
     // What does it mean when I only write void (Movement)? What does void mean?
+    //Void means that the method doesn't return anything. Void means that the function won't return a value to anything outside from within its own function. 
     void Movement ()
     {
         // TODO: Problem 8: Please explain what the next 4 lines mean.
         // What is Input.GetAxis, transform.Translate, and transform.Rotate? 
+        /* Input.GetAxis is to return the value of the virtual axis identified by axisName. The value will be in the range -1...1 for keyboard and joystick input devices.
+           transform.Translate is to move the transform in the direction and distance of translation.
+           transform.Rotate is to rotate GameObjects in a variety of ways. The rotation is often provided as an Euler angle and not a Quaternion.
+        */
+
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        //With key presses, you¡¯re going to get a -1, 0, or a 1. So the vertical axis might be set for the W and S keys. If W is pressed, you get a 1. If it¡¯s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when it¡¯s not pressed, you¡¯ll multiply it by 0 and not move in that direction. 
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        
+        //With key presses, you¡¯re going to get a -1, 0, or a 1. So the vertical axis might be set for the D and W keys. If W is pressed, you get a 1. If it¡¯s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when it¡¯s not pressed, you¡¯ll multiply it by 0 and not move in that direction.
         transform.Translate(Vector3.forward * forwardMovement);
+        //Move a GameObject in XZ space(forward, back, left, or right) in the distance of "forwardMovement"
         transform.Rotate(Vector3.up * turnMovement);
+        ///Rotate a GameObject in the direction of "turnMovement"
     }
-    
-    
+
+
     void Shoot ()
     {
         // TODO: Problem 9: Looking at this code, is this code using Unity's Old or New 
@@ -39,6 +49,7 @@ public class EnemyCollision : MonoBehaviour
             Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
             bulletInstance.AddForce(firePosition.forward * bulletSpeed);
             myStuff.bullets--;
+            //Instantiate makes a copy of an object in a similar way to the Duplicate command in the editor. If you are cloning a GameObject you can specify its position and rotation
         }
     }
 
@@ -53,4 +64,16 @@ public class EnemyCollision : MonoBehaviour
 
     Remember to call your Coroutine.
     */ 
+    public class Weapon: MonoBehaviour
+    {
+        private int arrow;
+        private int sword;
+        private int rocket;
+    }
+    public IEnumerator CallSpawner()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SpawnObstacles();
+    }
+
 }
