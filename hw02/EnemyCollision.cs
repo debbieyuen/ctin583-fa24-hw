@@ -30,9 +30,9 @@ public class EnemyCollision : MonoBehaviour
         */
 
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        //With key presses, you¡¯re going to get a -1, 0, or a 1. So the vertical axis might be set for the W and S keys. If W is pressed, you get a 1. If it¡¯s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when it¡¯s not pressed, you¡¯ll multiply it by 0 and not move in that direction. 
+        //With key presses, you are going to get a -1, 0, or a 1. So the vertical axis might be set for the W and S keys. If W is pressed, you get a 1. If itï¿½ï¿½s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when itï¿½ï¿½s not pressed, youï¿½ï¿½ll multiply it by 0 and not move in that direction. 
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        //With key presses, you¡¯re going to get a -1, 0, or a 1. So the vertical axis might be set for the D and W keys. If W is pressed, you get a 1. If it¡¯s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when it¡¯s not pressed, you¡¯ll multiply it by 0 and not move in that direction.
+        //With key presses, you are going to get a -1, 0, or a 1. So the vertical axis might be set for the D and W keys. If W is pressed, you get a 1. If itï¿½ï¿½s not pressed, you get a 0. So when it is pressed, the player will move at the specified speed since you multiplied the speed by 1. And when itï¿½ï¿½s not pressed, youï¿½ï¿½ll multiply it by 0 and not move in that direction.
         transform.Translate(Vector3.forward * forwardMovement);
         //Move a GameObject in XZ space(forward, back, left, or right) in the distance of "forwardMovement"
         transform.Rotate(Vector3.up * turnMovement);
@@ -64,16 +64,25 @@ public class EnemyCollision : MonoBehaviour
 
     Remember to call your Coroutine.
     */ 
+    
     public class Weapon: MonoBehaviour
     {
         private int arrow;
         private int sword;
         private int rocket;
     }
-    public IEnumerator CallSpawner()
+    IEnumerator WeaponSwitch()
     {
-        yield return new WaitForSeconds(0.5f);
-        SpawnObstacles();
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            // Switch weapons here
+        }
+    }
+
+    void Start()
+    {
+        StartCoroutine(WeaponSwitch());
     }
 
 }
