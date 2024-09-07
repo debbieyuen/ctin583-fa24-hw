@@ -21,7 +21,14 @@ public class EnemyCollision : MonoBehaviour
     void Movement ()
     {
         // TODO: Problem 8: Please explain what the next 4 lines mean.
-        // What is Input.GetAxis, transform.Translate, and transform.Rotate? 
+        // What is Input.GetAxis, transform.Translate, and transform.Rotate?
+
+        //Input.GetAxis is the GetAxis() method within the old Input class from Unity.
+        //It takes in an axis as a parameter (normally defined in Unity's Project Settings).
+        //The axes have three values: -1 , 0, and 1
+        
+        //Transform.Translate moves an object based on a vector
+        //Transform.Rotate rotates an object based on a vector
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
         
@@ -34,6 +41,11 @@ public class EnemyCollision : MonoBehaviour
     {
         // TODO: Problem 9: Looking at this code, is this code using Unity's Old or New 
         // Input System? Please describe what Instantiate is doing in this if statement.
+
+        //This code uses Unity's old input system
+        //Instantiate is creating a clone of the bullet prefab, setting its position and rotation to that of "firePosition".
+        //Instantiate normally takes the type of GameObject, but is casted into the Rigidbody type to preform physics calculations
+
         if(Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
             Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
@@ -52,5 +64,44 @@ public class EnemyCollision : MonoBehaviour
     Use the WaitForSeconds function to tell it to switch weapons every 5 seconds. 
 
     Remember to call your Coroutine.
-    */ 
+    */
+
+    public class Weapon : MonoBehaviour
+    {
+        public int arrow = 0;
+        public int sword = 1;
+        public int rocket = 2;
+        public int[] weapons = new int[3];
+        public bool isFrozen = false;
+
+        private void Start()
+        {
+            weapons[0] = arrow;
+            weapons[1] = sword;
+            weapons[2] = rocket;
+        }
+
+        private void Update()
+        {
+            if (isFrozen == false)
+            {
+                for (int i = 0; i < weapons.Length; i++)
+                {
+                    Debug.Log("current weapon: " + weapons[i]);
+                    StartCoroutine(SwapWeapons());
+                    if (i == weapons.Length - 1)
+                    {
+                        i = 0;
+                    }
+                }
+            }
+
+        }
+
+        public IEnumerator SwapWeapons()
+        {
+            yield return new WaitForSeconds(5f);
+        }
+    }
 }
+
