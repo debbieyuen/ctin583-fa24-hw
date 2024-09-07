@@ -37,7 +37,7 @@ public class EnemyCollision : MonoBehaviour
         // TODO: Problem 9: Looking at this code, is this code using Unity's Old or New 
         // Input System? Please describe what Instantiate is doing in this if statement.
 
-        // This code is using Unity's New input system 
+        // This code looks like Unity's old input system because it only works with a specific input. 
         if(Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
             Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
