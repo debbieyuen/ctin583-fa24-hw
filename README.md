@@ -7,7 +7,7 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 | --------- | ------------- | ---- | ---- |
 | [HW 02](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | [Folder](./hw02) |
 | [HW 03](https://ctin583.usc.edu/latest/Homework/hw03/) | Gyroscope | C# | [Folder](./hw03) |
-| [HW 04](https://ctin583.usc.edu/latest/Homework/hw04/) | Gyroscope | C# | [Folder](./hw04) | Generics and Inheritance | C# | Not Released |
+| [HW 04](https://ctin583.usc.edu/latest/Homework/hw04/) | Generics and Inheritance | C# | [Folder](./hw04) |
 | HW 05 | Object-Oriented Concepts | C# | Not Released |
 | HW 06 | Euler Angles, Matrix, Quaternions | C# | Not Released|
 | HW 07 | Dot and Cross Product | C# | Not Released |
