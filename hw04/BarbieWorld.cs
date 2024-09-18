@@ -20,20 +20,21 @@ using UnityEngine;
     * What are the performance implications of using generic arrays as opposed to non-generic arrays in C#?
     // Generic arrays perform better than non-generic arrays because they are type-safe.
 
-    * What does it mean to instantiate? */
+    * What does it mean to instantiate? 
     // To create an instance of a class or object, like a prefab for example.
+*/
 
 public class BarbieWorld<T>
 {
-    T item; 
-    /* TODO: Problem 2: BARBIE'S CAREERS: Barbie wears many hats. She is a photographer,
-    singer, athlete, painter, musician, rockstar, and much more.
-    What is the function below trying to accomplish?
-    How are we using the T variable in this case?
-    Please instantiate an item of this class in  
-    your BarbieWalletBalance.cs file in your
-    Start() or Update() functions. */
-    public void BarbieCareers(T newCareer) {
+    T item;
+    /* TODO: Problem 2: BARBIE'S CAREERS
+        * Barbie wears many hats. She is a photographer, singer, athlete, painter, musician, rockstar, and much more. What is the function below trying to accomplish? How are we using the T variable in this case? 
+        * Please instantiate an item of this class in your BarbieWalletBalance.cs file in your Start() or Update() functions.
+        // The function below is trying to set Barbie's current career to the new career that is passed. We are using the T variable to allow the class to be used with any type.
+    */
+
+    public void BarbieCareers(T newCareer)
+    {
         currentCareer = newCareer;
     }
 }
