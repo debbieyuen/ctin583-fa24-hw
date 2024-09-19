@@ -43,7 +43,8 @@ public class BarbieWorld<T>
         The T variable allows different types to be used as arguments in this generic.
     Please instantiate an item of this class in  
     your BarbieWalletBalance.cs file in your
-    Start() or Update() functions. */
+    Start() or Update() functions. 
+        See Start() function in BarbieWalletBalance.cs */
     public void BarbieCareers(T newCareer) {
         currentCareer = newCareer;
     }

@@ -30,6 +30,6 @@ public class BarbieHouse : BarbieWorld
     private void food()
     {
         string foodToday = rnd.Next(barbieFoods.Count);
-        Debug.Log("Barbie ate " + foodToday " today!");
+        Debug.Log("Barbie ate " + foodToday + " today!");
     }
 }
