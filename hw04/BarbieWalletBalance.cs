@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BarbieBank : MonoBehaviour
 {
-
+    BarbieWorld<string> barbieWorld; 
     // Start is called before the first frame update
 
     /* TODO: Problem 3: BARBIE'S BANK
@@ -15,6 +15,8 @@ public class BarbieBank : MonoBehaviour
     */
     void Start()
     {
+        barbieWorld = new BarbieWorld<string>();
+        barbieWorld.BarbieCareers("Photographer");
         
         int[] biggerWallet = BarbieWallet(500, 600);
         Debug.Log(biggerWallet.Length + " " + biggerWallet[0] + " " + biggerWallet[1]);
@@ -29,6 +31,21 @@ public class BarbieBank : MonoBehaviour
     private T[] BarbieBank<T>(T numOfPennies, T cashAmount, T numOfCreditCards)
     {
         return new T[] { numOfPennies, cashAmount, numOfCreditCards };
+    }
+
+    void Update()
+    {
+        // On pressing the C key, change Barbie's career to Rockstar
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            barbieWorld.BarbieCareers("Rockstar");
+        }
+
+        // On pressing the P key, change Barbie's career to Painter
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            barbieWorld.BarbieCareers("Painter");
+        }
     }
 
   
