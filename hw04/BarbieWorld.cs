@@ -9,6 +9,15 @@ using UnityEngine;
     * Give a realistic and detailed example of when you would want to use generics in your game. When would type variables be useful?
     * What are the performance implications of using generic arrays as opposed to non-generic arrays in C#?
     * What does it mean to instantiate? */
+
+
+    //Answers:
+    //GetComponent<T> is a generic method that can get any type of component, like a rigidbody or script. It's generic because it can get any type of component.
+    //We use T as a placeholder or type. If we have more than one parameter, we use T,U,V, etc.
+    //Genetic variables let us use any type of data in a method. It's the return type and argument type so that it can be reused with any type of data. 
+    //We used it in the Kitchen Chaos tutorial to clean up multiple lines of code that were all returning the same variable. Another example would be setting up an inventory system where you have multiple types of items. With a generic, we could access all of these items with one method. It's helpful to reduce the amount of code.
+    //Generic arrays are faster than non-generic arrays, since non-generic arrays have to box and unbox data. 
+    //Instantiate means that you're creating an instance of a class or object. 
 public class BarbieWorld<T>
 {
     T item; 
@@ -23,3 +32,6 @@ public class BarbieWorld<T>
         currentCareer = newCareer;
     }
 }
+    
+    //Answers: 
+    //The function is setting Barbie's current career equal to her new career. We're using the T variable so that we can set any type of career for Barbie.

@@ -16,11 +16,47 @@ public class BarbieBank : MonoBehaviour
 
     void Start()
     {
-        int[] biggerWallet = BarbieWallet(500, 600);
+
+        //Question 2- Instantiate a new career for Barbie 
+        BarbieWorld<string> barbieWorld = new BarbieWorld<string>();
+        barbieWorld.BarbieCareers("GameDesigner");
+
+    //Problem 3
+        // Convert the existing function to a generic array 
+        var biggerWallet = BarbieWallet(500, 600);
         Debug.Log(biggerWallet.Length + " " + biggerWallet[0] + " " + biggerWallet[1]);
 
         GetMoney(500, 600);
+
+
+        //add the BarbieBank function 
+        var bankArray = BarbieBank(500, 600, 3);
+        Debug.Log(bankArray.Length + " " + bankArray[0] + " " + bankArray[1] + " " + bankArray[2]);
+
+      
     }
+
+    // Generic function for BarbieWallet
+    private T[] BarbieWallet<T>(T numOfPennies, T cashAmount)
+    {
+        return new T[] { numOfPennies, cashAmount };
+    }
+
+    // BarbieBank generic function
+    private T[] BarbieBank<T>(T numOfPennies, T cashAmount, T numOfCreditCards)
+    {
+        return new T[] { numOfPennies, cashAmount, numOfCreditCards };
+    }
+
+    //Get Money function 
+    void GetMoney(int numOfPennies, int cashAmount)
+    {
+        
+    }
+
+
+
+   
 
     /* TODO: Problem 4: INHERITANCE: SHORT ANSWERS
         * What is the "Protected" access modifier? How does it relate to inheritence and between two classes. 
@@ -34,3 +70,9 @@ public class BarbieBank : MonoBehaviour
         Debug.Log(moreMoney.GetType());
     }
 }
+
+//The "Proteced" access modifier helps with inheritance. Since inheritance can get out of hand, the protected access modifier allows us to control what is inherited, by only allowing the child class to access the parent class.
+//Monobehaviour is the default base class for Unity Scripts. Start and Update are Monobehaviour functions.
+//When a class can inherit multiple classes. C# doesn't support it because it can get out of hand quickly.
+//Protected means that the method can only be accessed by it's class and derived class. Virtual means that the method can be overriden in derived classes. So, protected virtual void means that the method can be overriden in derived classes.
+//When the parent class is called in a constructor- the base class is called first and then the derived class. We can control which base class constructor is being called by using the base keyword. ie public class BarbieBank : MonoBehaviour above is calling the Monobehaviour base class.
