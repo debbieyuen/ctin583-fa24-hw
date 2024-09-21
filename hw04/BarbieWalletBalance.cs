@@ -17,6 +17,10 @@ public class BarbieBank : MonoBehaviour
     {
         barbieWorld = new BarbieWorld<string>();
         barbieWorld.BarbieCareers("Photographer");
+
+        barbieHouse.DisplayFurniture();
+        barbieHouse.ShowPets();
+        barbieHouse.ShowFood();
         
         int[] biggerWallet = BarbieWallet(500, 600);
         Debug.Log(biggerWallet.Length + " " + biggerWallet[0] + " " + biggerWallet[1]);
