@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SearchService;
 
@@ -17,7 +18,7 @@ using UnityEngine.SearchService;
     Problem 4: TODO: Define a new enum within this file taking in different types of particles. 
     Examples include: FireParticles, GoldRibbons, Snowflakes, RainParticles, etc. 
 
-    Problem 5: TODO: 
+    Problem 5: TODO: --Answered at bottom--
         * When would you use a tuple over a struct?
         * How do we acces items in a tuple?
         * Try visualizing your enum in the Unity Editor. How does it appear as?
@@ -34,25 +35,25 @@ public class CollisionHandler : MonoBehaviour
     // Problem 1 and Problem 2
     private void OnCollisionEnter(Collision collision) {
         switch (collision.gameObject.tag) {
-            case collectibles.Bomb:
+            case nameof(CollectibleItems.Bomb):
                 break;
-            case collectibles.Rock:
+            case nameof(CollectibleItems.Rock):
                 break;
-            case collectibles.Gem:
+            case nameof(CollectibleItems.Gem):
                 meshRenderer.material = collision.gameObject.GetComponent<Renderer>().material;
                 Destroy(collision.gameObject);
-                PlayParticles();
+                // PlayParticles();
                 break;
-            case collectibles.Leaf:
+            case nameof(CollectibleItems.Leaf):
                 break;
-            case collectibles.Flower:
+            case nameof(CollectibleItems.Flower):
                 break;
-            case collectibles.Fake:
+            case nameof(CollectibleItems.Fake):
                 break;    
-            case collectibles.Enemy:
+            case nameof(CollectibleItems.Enemy):
                 Destroy(gameObject);
                 break;
-            case collectibles.Player:
+            case nameof(CollectibleItems.Player):
                 break;
             default:
                 break;
@@ -65,19 +66,33 @@ public class CollisionHandler : MonoBehaviour
         (string word, int x, int y) normalTuple = ("bonk", 1, 2);
         var valueTuple = (3, 4, 5, 6, 7, 8);
 
-        Debug.Log($"Tuple's word is + {word} and the values are {x} and {y}");
-        Debug.Log("The highes value in this tuple is " + Mathf.Max(valueTuple));
+        Debug.Log($"Tuple's word is + {normalTuple.word} and the values are {normalTuple.x} and {normalTuple.y}");
+        Debug.Log("The first value in this tuple is " + valueTuple.Item1);
     }
 
     // Problem 4
     [SerializeField] private CollisionHandler.Particles particles;
-    private enum Particles particles
+    private enum Particles
     {
         FireParticles, 
         GoldRibbons, 
         Snowflakes, 
         RainParticles,
     }
+
+    /*
+
+    Problem 5: TODO: 
+        * When would you use a tuple over a struct?
+            A tuple is a simple way to store data and can be used any time you need to associate specific values 
+            in a data structure. Structs are more complex and are better for abstraction and complicated behaviors. 
+        * How do we access items in a tuple?
+            There are several ways to access items in a tuple, including the .Item1 (.Item2, etc) method or by defining
+            a variable inside the tuple and referencing it outside. 
+        * Try visualizing your enum in the Unity Editor. How does it appear as?
+            In the unity editor enums appear as dropdown menus. 
+
+    */
     
 
     // Check to make sure our value is defined
