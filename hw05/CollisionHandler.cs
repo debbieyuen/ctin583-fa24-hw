@@ -24,22 +24,68 @@ using UnityEngine.SearchService;
         
 ******************************************************************************************************
 */
-public class CollisionHandler : MonoBehaviour
+public class CollisionHandler : MonoBehaviour, CollectableInterface
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private ParticleSystem enemyParticles;
     [SerializeField] private CollectibleItems collectibles; 
 
+
+//Problem 4
+public enum Particles {
+    FireParticles = 1,
+
+    GoldRibbons = 2,
+
+    Snowflakes = 3,
+    
+    RainParticles = 4,
+
+    BarfParticles = 5,
+
+    DiamondParticles = 6
+}
+
+
+
     private void OnCollisionEnter(Collision collision) {
+
+        //Problem 1 and 2
         switch (collision.gameObject.tag) {
-            case "Enemy":
+            
+            case: CollectibleItems.Bomb:
+                Destroy(gameObject);
+                break;
+            
+            case: CollectibleItems.Rock:   
                 Destroy(gameObject);
                 break;
 
-            case "Gem":
+             case CollectibleItems.Gem:
                 meshRenderer.material = collision.gameObject.GetComponent<Renderer>().material;
                 Destroy(collision.gameObject);
                 PlayParticles();
+                break;
+
+            case: CollectibleItems.Leaf:   
+                Destroy(gameObject);
+                break;  
+
+            case: CollectibleItems.Flower:  
+                Destroy(gameObject);
+                break;
+            
+            case: CollectibleItems.Fake:       
+                Destroy(gameObject);
+                break;
+
+            case CollectibleItems.Enemy:
+                Destroy(gameObject);
+                break;
+
+            
+            case: CollectibleItems.Player:     
+                Destroy(gameObject);
                 break;
 
             default:
@@ -55,7 +101,30 @@ public class CollisionHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        // Problem 3
+        // Normal Tuple
+        var collisionTuple = new Tuple<int, string>(3, "No more collisions");
+
+        // Value Tuple
+        (int, int, string) timesCollionsCanHappen = (3, 4, "No more collisions");
+
+
+
         // Set the tag based on the enum
         gameObject.tag = collectibles.ToString();
     }
 }
+
+
+// Problem 5
+// When would you use a tuple over a struct?
+    //Tuples are used when you want to return multiple values. They are lightweight and wouldn't be used for complex data structures. 
+    //Structs are used when you want to create a complex data structure. You'd use structs when you want to creat a new type that can be passed around in your code.
+
+// How do we acces items in a tuple?
+    //By using the dot operator- for example Tuple.Item1, Tuple.Item2, etc.
+
+// Try visualizing your enum in the Unity Editor. How does it appear as?
+    //Enums appear as dropdowns in the Unity Editor. You can select the enum you want in the inspector.

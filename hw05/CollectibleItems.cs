@@ -17,6 +17,7 @@ public enum CollectibleItems
     Player = 8
 }
 
+
 public interface CollectibleInterface {
     void myCollectable(CollectibleItems items);
 }
