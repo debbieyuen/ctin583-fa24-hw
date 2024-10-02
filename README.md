@@ -9,8 +9,7 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 | [HW 03](https://ctin583.usc.edu/latest/Homework/hw03/) | Gyroscope | C# | [Folder](./hw03) |
 | [HW 04](https://ctin583.usc.edu/latest/Homework/hw04/) | Generics and Inheritance | C# | [Folder](./hw04) |
 | [HW 05](https://ctin583.usc.edu/latest/Homework/hw05/) | Enumerations | C# | [Folder](./hw05) |
-| HW 06 | Euler Angles, Matrix, Quaternions | C# | Not Released|
-| HW 07 | Dot and Cross Product | C# | Not Released |
+| [HW 07](https://ctin583.usc.edu/latest/Homework/hw07/) | 3D Orientations | C# | [Folder](./hw07) |
 | HW 11 | Shaders | HLSL | Not Released |
 | HW 14 | Delegates and Events | C# | Not Released |
 | HW 15 | Polymorphism | C# | Not Released |
