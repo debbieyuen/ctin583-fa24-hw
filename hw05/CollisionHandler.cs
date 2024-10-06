@@ -8,7 +8,7 @@ using UnityEngine.SearchService;
     Problem 1: TODO: Finish the case statements for each collectible item listed in CollectibleItems.cs
 
     Problem 2: TODO: Currently each case statement is written as a string. Enums are especially helpful 
-    in preventing spelling mistakes. Instead of using strings sucn as "Enemy" and "Gem", lets use an enum. 
+    in preventing spelling mistakes. Instead of using strings such as "Enemy" and "Gem", lets use an enum. 
     Please modify each case statement to use an enum instead. 
 
     Problem 3: TODO: Define a normal tuple and a value tuple. When would you use a value tuple? 
@@ -21,7 +21,7 @@ using UnityEngine.SearchService;
         * When would you use a tuple over a struct?
         * How do we acces items in a tuple?
         * Try visualizing your enum in the Unity Editor. How does it appear as?
-        
+
 ******************************************************************************************************
 */
 public class CollisionHandler : MonoBehaviour
