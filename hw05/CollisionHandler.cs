@@ -19,27 +19,60 @@ using UnityEngine.SearchService;
 
     Problem 5: TODO: 
         * When would you use a tuple over a struct?
-        * How do we acces items in a tuple?
-        * Try visualizing your enum in the Unity Editor. How does it appear as?
+        // Structs can have members and methods. A tuple can only have labels and values. So tuples are 
+        // better for quick grouping of values. 
 
+        * How do we access items in a tuple?
+        // Items in a tuple can be accessed using the dot operator. By default, items are labeled Item1
+        // Item2, and so on. For example, items in tuple t1 can be accessed as t1.Item1, t1.Item2, etc.
+
+        * Try visualizing your enum in the Unity Editor. How does it appear as?
+        // Enums appear as dropdowns in the Unity Editor
 ******************************************************************************************************
 */
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private ParticleSystem enemyParticles;
-    [SerializeField] private CollectibleItems collectibles; 
+    [SerializeField] private CollectibleItems collectibles;
 
-    private void OnCollisionEnter(Collision collision) {
-        switch (collision.gameObject.tag) {
-            case "Enemy":
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Problems 1 & 2
+        switch (collectibles)
+        {
+\            case CollectibleItems.Bomb:
                 Destroy(gameObject);
                 break;
 
-            case "Gem":
+            case CollectibleItems.Rock:
+                Destroy(gameObject);
+                break;
+
+            case CollectibleItems.Gem:
                 meshRenderer.material = collision.gameObject.GetComponent<Renderer>().material;
                 Destroy(collision.gameObject);
                 PlayParticles();
+                break;
+
+            case CollectibleItems.Leaf:
+                Destroy(gameObject);
+                break;
+
+            case CollectibleItems.Flower:
+                Destroy(gameObject);
+                break;
+            
+            case CollectibleItems.Fake:
+                Destroy(gameObject);
+                break;
+
+            case CollectibleItems.Enemy:
+                Destroy(gameObject);
+                break;
+
+            case CollectibleItems.Player:
+                Destroy(gameObject);
                 break;
 
             default:
@@ -47,15 +80,24 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    // Check to make sure our value is defined
-    private bool IsCollectibleItem(CollectibleItems collectible) {
-        return (collectibles & collectible) != 0;
+    // Problem 3
+    void Tuples()
+    {
+        // Value tuples are useful for combining multitples values into a single element.
+
+        (int, int, string) t1 = (1, 2, "Buckle my shoe");
+        Debug.Log(t1);
+
+        var t2 = (3, 4, "Shut the door");
+        Debug.Log(t2);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // Problem 4
+    enum ParticleTypes
     {
-        // Set the tag based on the enum
-        gameObject.tag = collectibles.ToString();
+        FireParticles,
+        GoldRibbons,
+        Snowflakes,
+        RainParticles
     }
 }
