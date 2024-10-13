@@ -10,6 +10,7 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 | [HW 04](https://ctin583.usc.edu/latest/Homework/hw04/) | Generics and Inheritance | C# | [Folder](./hw04) |
 | [HW 05](https://ctin583.usc.edu/latest/Homework/hw05/) | Enumerations | C# | [Folder](./hw05) |
 | [HW 07](https://ctin583.usc.edu/latest/Homework/hw07/) | 3D Orientations | C# | [Folder](./hw07) |
+| [HW 08](https://ctin583.usc.edu/latest/Homework/hw08/) | Yarn Spinner | C# | [Folder](./hw08) |
 | HW 11 | Shaders | HLSL | Not Released |
 | HW 14 | Delegates and Events | C# | Not Released |
 | HW 15 | Polymorphism | C# | Not Released |
