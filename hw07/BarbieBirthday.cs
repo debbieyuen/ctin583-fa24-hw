@@ -16,8 +16,8 @@ The party pinata is hanging 8.2 feet or 2.5 meters high from the ground.
 Assume that the angles between the distance of the pinata to the ground and Barbie's distance to the pinata create a 90 degree angle. 
 
 TODO: Problem 1: Barbie is holding a bat to swing at the pinata. What should be the magnitude the bat should swing at? Make sure the check for edge cases including:
-        * Barbie has only three chances to swing at the pinata before it is the next player's turn
-        * If Barbie runs out of turns, a message should display that Barbie's turn is over and it is the next player's turn
+     * Barbie has only three chances to swing at the pinata before it is the next player's turn
+     * If Barbie runs out of turns, a message should display that Barbie's turn is over and it is the next player's turn
 */ 
 public class BarbieBirthday : MonoBehaviour
 {
