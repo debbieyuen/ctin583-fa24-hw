@@ -1,1 +1,0 @@
-## Please attach your C# and Yarn Spinner Scripts in this folder

@@ -1,4 +1,4 @@
-# CTIN 583 (Fall 2024) Programming Homework Assignments
+# CTIN 583 (Spring 2024) Programming Homework Assignments
 
 Please refer to this GitHub repository for some of your homework. Feel free to book mark or star this repository to make things easier! 
 
@@ -6,11 +6,11 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 | Homework  | Description | Language | Link
 | --------- | ------------- | ---- | ---- |
 | [HW 02](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | [Folder](./hw02) |
-| [HW 03](https://ctin583.usc.edu/latest/Homework/hw03/) | Gyroscope | C# | [Folder](./hw03) |
-| [HW 04](https://ctin583.usc.edu/latest/Homework/hw04/) | Generics and Inheritance | C# | [Folder](./hw04) |
-| [HW 05](https://ctin583.usc.edu/latest/Homework/hw05/) | Enumerations | C# | [Folder](./hw05) |
-| [HW 07](https://ctin583.usc.edu/latest/Homework/hw07/) | 3D Orientations | C# | [Folder](./hw07) |
-| [HW 08](https://ctin583.usc.edu/latest/Homework/hw08/) | Yarn Spinner | C#, Yarn | [Folder](./hw08) |
+| HW 03 | Gyroscope | C# | Folder |
+| HW 04 | Generics and Inheritance | C# | Folder |
+| HW 05 | Enumerations | C# | Folder |
+| HW 07 | 3D Orientations | C# | Folder |
+| HW 08 | Yarn Spinner | C#, Yarn | Folder |
 | HW 11 | Shaders | HLSL | Not Released |
 | HW 14 | Delegates and Events | C# | Not Released |
 | HW 15 | Polymorphism | C# | Not Released |
