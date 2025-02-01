@@ -5,15 +5,7 @@ Please refer to this GitHub repository for some of your homework. Feel free to b
 ## Homeworks
 | Homework  | Description | Language | Link
 | --------- | ------------- | ---- | ---- |
-| [HW 02](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | [Folder](./hw02) |
-| HW 03 | Gyroscope | C# | Folder |
-| HW 04 | Generics and Inheritance | C# | Folder |
-| HW 05 | Enumerations | C# | Folder |
-| HW 07 | 3D Orientations | C# | Folder |
-| HW 08 | Yarn Spinner | C#, Yarn | Folder |
-| HW 11 | Shaders | HLSL | Not Released |
-| HW 14 | Delegates and Events | C# | Not Released |
-| HW 15 | Polymorphism | C# | Not Released |
+| [HW 03](https://ctin583.usc.edu/latest/Homework/hw02/) | Classes and Coroutines | C# | [Folder](./hw02) |
 
 ## Set Up
 
